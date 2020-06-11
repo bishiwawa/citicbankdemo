@@ -1,0 +1,24 @@
+
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/myschema?serverTimezone=UTC
+    username: root
+    password: lin85565335
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  thymeleaf:
+      enabled: true
+      encoding: utf-8
+      prefix: classpath:/templates/
+      cache: false
+      mode: LEGACYHTML5
+      suffix: .html
+
+mybatis-plus:
+  typeAliasesPackage: com.example.hello.po
