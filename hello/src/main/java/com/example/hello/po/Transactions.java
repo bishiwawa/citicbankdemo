@@ -7,19 +7,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("user")
-public class User {
-  @TableId
-  private int user_id;
+@TableName("transactions")
+public class Transactions {
+    @TableId
+    private long tran_id;
 
-  private String card_id;
-  private String password;
-  private String username;
-  private boolean gender;
-  private String id_card;
-  private BigDecimal balance;
+    private boolean tran_type;
+    private String card_id1;
+    private String card_id2;
+    private BigDecimal money;
+    private Timestamp time;
 }

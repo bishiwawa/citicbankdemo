@@ -1,33 +1,25 @@
 package com.example.hello.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.hello.mapper.TransactionsMapper;
 import com.example.hello.mapper.UserMapper;
-import com.example.hello.po.User;
 import com.example.hello.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-import java.util.List;
-import java.util.Map;
+import java.math.BigDecimal;
 
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
-
-    @Resource
+public class UserServiceImpl implements UserService {
+    @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private TransactionsMapper transactionsMapper;
 
-    private List<User> getAllUser(Integer id){
-        return userMapper.getAllUser(id);
+    @Transactional
+    public void deal (String cardIdSrc, String cardIdDes, BigDecimal transMoney) throws Exception{
+        userMapper.reduceBalanceByCardId(cardIdSrc, transMoney);
+        userMapper.addBalanceByCardId(cardIdDes, transMoney);
+        //throw new RuntimeException("伪造的异常");    //伪造异常，测试回滚操作
     }
-
-    @Override
-    public User getUserById(Integer id){
-        List<User> users = getAllUser(id);
-        if(users == null || users.size() == 0){
-            return null;
-        }
-        return users.get(0);
-    }
-
-
 }

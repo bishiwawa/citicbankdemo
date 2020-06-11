@@ -1,10 +1,7 @@
 package com.example.hello.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.hello.po.User;
+import java.math.BigDecimal;
 
-public interface UserService extends IService<User> {
-
-    User getUserById(Integer id);
-
+public interface UserService {
+    void deal(String cardIdSrc, String cardIdDes, BigDecimal transMoney) throws Exception;
 }
