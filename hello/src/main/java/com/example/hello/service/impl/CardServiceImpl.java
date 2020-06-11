@@ -6,6 +6,7 @@ import com.example.hello.po.Status;
 import com.example.hello.po.UserBO;
 import com.example.hello.service.ICardService;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.UUID;
@@ -31,7 +32,7 @@ public class CardServiceImpl implements ICardService {
         try{
             //查询用户信息
             UserBO userInfo = userBOMapper.getUserInfo(userId);
-            if(null == userInfo || userInfo.getRole() != 0){
+            if(null == userInfo || userInfo.getRole() != 0 || userInfo.getCardId() != null){
                 return Status.NO_AUTHORITY;
             }
             //生成cardId
@@ -40,7 +41,7 @@ public class CardServiceImpl implements ICardService {
                     .toUpperCase()
                     .substring(0,19);
             //开卡
-            UserBO userBO =UserBO.builder()
+            UserBO userBO = UserBO.builder()
                     .userId(userId)
                     .cardId(cardId)
                     .build();

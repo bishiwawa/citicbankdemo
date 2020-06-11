@@ -3,9 +3,10 @@ server:
   port: 8080
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/myschema?serverTimezone=UTC
     username: root
-    password: admin
+    password: lin85565335
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,7 +22,3 @@ spring:
 
 mybatis-plus:
   typeAliasesPackage: com.example.hello.po
-
-mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
-  type-aliases-package: com.example.hello.po
