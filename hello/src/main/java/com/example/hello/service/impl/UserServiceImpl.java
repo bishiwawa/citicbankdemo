@@ -1,6 +1,6 @@
 package com.example.hello.service.impl;
 
-import com.example.hello.mapper.TransactionsMapper;
+import com.example.hello.mapper.TranscntionsMapper;
 import com.example.hello.mapper.UserMapper;
 import com.example.hello.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Autowired
-    private TransactionsMapper transactionsMapper;
+    private TranscntionsMapper transcntionsMapper;
 
     @Transactional
     public void deal (String cardIdSrc, String cardIdDes, BigDecimal transMoney) throws Exception{

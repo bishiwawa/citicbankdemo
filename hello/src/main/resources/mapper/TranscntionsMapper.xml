@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hello.mapper.TranscntionsMapper">
+
+    <insert id="updateTransRecord">
+        insert into transactions(tran_type, card_id1, card_id2, money) values
+        (3, #{cardIdSrc}, #{cardIdDes}, #{money});
+    </insert>
+
+</mapper>

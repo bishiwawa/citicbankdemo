@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("transactions")
-public class Transactions {
+public class Transcntions {
     @TableId
     private long tran_id;
 
