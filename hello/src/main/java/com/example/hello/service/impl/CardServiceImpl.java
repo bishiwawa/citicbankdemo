@@ -6,7 +6,6 @@ import com.example.hello.po.Status;
 import com.example.hello.po.UserBO;
 import com.example.hello.service.ICardService;
 import org.springframework.stereotype.Service;
-import org.thymeleaf.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.UUID;

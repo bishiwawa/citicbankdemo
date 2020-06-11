@@ -16,7 +16,8 @@
     </update>
 
     <update id="cancelCard" parameterType="int">
-        update user set card_id = null where user_id = #{userId} and balance = 0;
+        update user set card_id = null where user_id = #{userId}
+                                         and balance = 0 and card_id is not null ;
     </update>
 
 </mapper>

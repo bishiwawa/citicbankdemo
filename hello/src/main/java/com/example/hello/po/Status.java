@@ -20,4 +20,11 @@ public enum Status {
         this.des = des;
         this.code = code;
     }
-}
+
+    public String getDes() {
+        return des;
+    }
+
+    public int getCode() {
+        return code;
+    }}

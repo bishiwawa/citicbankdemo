@@ -23,14 +23,7 @@ public class CardController {
 
     private CardVO convertToHtml(Status rs){
         CardVO cardVO = new CardVO();
-        if(rs.equals(Status.OK)){
-            cardVO.setCode(1);
-            return cardVO;
-        }else if(rs.equals(Status.NO_AUTHORITY)){
-            cardVO.setCode(2);
-        }
-        //走到这里说明服务器异常
-        cardVO.setCode(3);
+        cardVO.setCode(rs.getCode());
         return cardVO;
     }
 
