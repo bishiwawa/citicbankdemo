@@ -5,10 +5,9 @@
         <result column="user_id" jdbcType="BIGINT" property="userId" />
         <result column="card_id" jdbcType="VARCHAR" property="cardId" />
         <result column="id_card" jdbcType="VARCHAR" property="idCard" />
-        <result column="role" jdbcType="VARCHAR" property="role" />
     </resultMap>
     <sql id="Base_Column_List" >
-        user_id, card_id, id_card, role
+        user_id, card_id, id_card
     </sql>
 
     <select id="getUserInfo" resultMap="BaseResultMap" parameterType="int">

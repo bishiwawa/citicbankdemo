@@ -32,7 +32,7 @@ public class CardServiceImpl implements ICardService {
         try{
             //查询用户信息
             UserBO userInfo = userBOMapper.getUserInfo(userId);
-            if(null == userInfo || userInfo.getRole() != 0 || userInfo.getCardId() != null){
+            if(null == userInfo || userInfo.getCardId() != null){
                 return Status.NO_AUTHORITY;
             }
             //生成cardId
@@ -61,7 +61,7 @@ public class CardServiceImpl implements ICardService {
         try{
             //查询用户信息
             UserBO userInfo = userBOMapper.getUserInfo(userId);
-            if(null == userInfo || userInfo.getRole() != 0){
+            if(null == userInfo){
                 return Status.NO_AUTHORITY;
             }
             int updateRows = cardBOMapper.cancelCard(userId);

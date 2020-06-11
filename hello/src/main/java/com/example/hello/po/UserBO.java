@@ -20,6 +20,4 @@ public class UserBO {
     private String cardId;
     //用户持卡Id
     private String idCard;
-    //用户类型（1:管理员，2：普通用户）
-    private Byte role;
 }
